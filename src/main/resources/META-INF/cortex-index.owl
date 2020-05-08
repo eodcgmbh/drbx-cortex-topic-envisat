@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY rdf  "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY owl  "http://www.w3.org/2002/07/owl#">
+  <!ENTITY drb  "http://www.gael.fr/drb#">
+  <!ENTITY envisat "http://www.esa.int/envisat#"> 
+  <!ENTITY img  "http://www.gael.fr/drb/image#">
+  <!ENTITY nc "http://www.unidata.ucar.edu/netcdf#">
+]>
+
+<rdf:RDF xmlns:rdf  = "&rdf;"
+         xmlns:rdfs = "&rdfs;"
+         xmlns:owl  = "&owl;"
+         xmlns:nc   = "&nc;"
+         xmlns:drb  = "&drb;"
+         xmlns:envisat = "&envisat;"
+         xmlns:img  = "&img;">
+
+   <owl:Ontology rdf:about="&envisat;"/>
+
+   <!--
+   Based on
+   https://earth.esa.int/documents/700255/3528455/Vol14_Ra2mwr_5I_Level2.pdf
+   -->
+   
+   <!-- ========================================= -->
+   <!--                                           -->
+   <!--           ENVISAT.RA2.level2              -->
+   <!--                                           -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&envisat;productRA2_level2">
+      <rdfs:label xml:lang="en">Envisat RA-2 Level-2 products: ENVISAT.RA2.GDR_2P and ENVISAT.RA2.MWS_2P</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&nc;netCDF"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>ENV_RA_2_(GDR|MWS)____[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}_[0-9]{3}_[0-9]{4}____[A-Z]{3}_[A-Z]{1}_[A-Z0-9_]{2}_...\.nc</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>
+
+</rdf:RDF>
