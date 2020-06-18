@@ -39,5 +39,91 @@
          <drb:nameMatch>ENV_RA_2_(GDR|MWS)____[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}_[0-9]{3}_[0-9]{4}____[A-Z]{3}_[A-Z]{1}_[A-Z0-9_]{2}_...\.nc</drb:nameMatch>
       </drb:signature>
    </owl:Class>
+   
+   
+   <!-- ========================================= -->
+   <!--                                           -->
+   <!--          ENVISAT.ASAR.level1              -->
+   <!--                                           -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&envisat;productASAR_image">
+      <rdfs:label xml:lang="en">Envisat ASAR Level-1 products: ENVISAT.ASA_APM_1P, ENVISAT.ASA_IMM_1P and ENVISAT.ASA_WSM_1P</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>ASA_(APM_1P|IMM_1P|WSM_1P)(N|T|V|S)...[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.N1</drb:nameMatch>
+      </drb:signature>
+      <drb:schemaLocation>
+          xsd/asar_image.xsd
+      </drb:schemaLocation>
+      <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
+   </owl:Class>
+   
+   
+   <!-- ========================================= -->
+   <!--                                           -->
+   <!--       ENVISAT.MERIS.level2 SEN3           -->
+   <!--                                           -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&envisat;productMERIS_level2_SEN3">
+      <rdfs:label xml:lang="en">Envisat MERIS Level-2 products with the SEN3 extension: ENVISAT.MER_FRS_2P</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>ENV_ME_2_FRG.*\.SEN3</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>
+
+
+   <!-- ========================================= -->
+   <!--                                           -->
+   <!--       ENVISAT.MERIS.level2 N1             -->
+   <!--                                           -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&envisat;productMERIS_level2">
+      <rdfs:label xml:lang="en">Envisat MERIS Level-2 products with the ENVISAT N1 extension: ENVISAT.MER_FRS_2P, ENVISAT.MER_RR__2P</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>MER_(FRS_2P|RR__2P)....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.N1</drb:nameMatch>
+      </drb:signature>
+      <drb:schemaLocation>
+          xsd/meris.xsd
+      </drb:schemaLocation>
+      <drb:implementationIdentifier>sdf</drb:implementationIdentifier>
+   </owl:Class>
+   
+   
+   <!-- ========================================= -->
+   <!--                                           -->
+   <!--           ENVISAT.ATS_LST_2P              -->
+   <!--                                           -->
+   <!-- ========================================= -->
+
+   <owl:Class rdf:about="&envisat;productATS_LST_2P">
+      <rdfs:label xml:lang="en">Envisat AATSR Level-2 product: ENVISAT.ATS_LST_2P</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;tgz"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>ATS_LST_2P....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}(\.tar\.gz|\.tgz|\.TGZ)</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>
+   
+   <owl:Class rdf:about="&envisat;productATS_LST_2P_netCDF">
+      <rdfs:label xml:lang="en">Envisat AATSR Level-2 product: ENVISAT.ATS_LST_2P netCDF file</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&nc;netCDF"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>ATS_LST_2P....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.nc</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>
 
 </rdf:RDF>
