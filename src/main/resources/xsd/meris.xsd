@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sdf="http://www.gael.fr/2004/12/drb/sdf" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- ========================================= -->
+  <!--           MAIN PRODUCT HEADER             -->
+  <!-- ========================================= -->
+  <xs:complexType name="MPH_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">MPH</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PRODUCT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Product File name</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>62</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PROC_STAGE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Processing Stage Flag</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="REF_DOC" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Reference Document Describing Product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>23</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ACQUISITION_STATION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Acquisition Station ID</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">62</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>20</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PROC_CENTER" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Processing Center ID which generated current product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">13</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PROC_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC Time of Processing</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SOFTWARE_VER" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Software Version number of processing software</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>14</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SENSING_START" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC start time of data sensing</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">56</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SENSING_STOP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC stop time of data sensing</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PHASE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Phase</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">47</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CYCLE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Cycle</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">6</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="REL_ORBIT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Start relative orbit number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ABS_ORBIT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Start absolute orbit number</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="STATE_VECTOR_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC of ENVISAT state vector</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">19</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DELTA_UT1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">DUT1=UT1-UTC</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>8</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="X_POSITION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X Position in Earth-Fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Y_POSITION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y Position in Earth-Fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Z_POSITION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z Position in Earth-Fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="X_VELOCITY" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">X velocity in Earth fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Y_VELOCITY" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Y velocity in Earth fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Z_VELOCITY" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Z velocity in Earth fixed reference</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">6</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>12</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VECTOR_SOURCE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Source of Orbit Vectors</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>2</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UTC_SBT_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC time corresponding to SBT below</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">55</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SAT_BINARY_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Satellite Binary Time (SBT)</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CLOCK_STEP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Clock Step Size</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">5</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LEAP_UTC" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">UTC time of the occurrence of the Leap Second</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">43</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LEAP_SIGN" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Leap second sign</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LEAP_ERR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Leap second error</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PRODUCT_ERR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">1 or 0. If 1, errors have been reported in the product. User should then refer to the SPH or Summary Quality ADS of the product for details of the error condition. If not used, set to 0.r</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">53</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TOT_SIZE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Total Size Of Product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>21</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SPH_SIZE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length Of SPH</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUM_DSD" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of DSDs</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">8</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DSD_SIZE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Length of Each DSD</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUM_DATA_SETS" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of DSs attached</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dummy" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">newline character</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>40</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ========================================= -->
+  <!--         SPECIFIC PRODUCT HEADER           -->
+  <!--              MERIS PRODUCTS               -->
+  <!-- ========================================= -->
+  <xs:complexType name="SPH_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">SPH</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SPH_DESCRIPTOR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">SPH Descriptor</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>28</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="STRIPLINE_CONTINUITY_INDICATOR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Value: 0= No stripline continuity, the product is a complete segment. Other: Stripline Counter</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">31</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SLICE_POSITION" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Value: +001 to NUM_SLICES. Default value if no stripline continuity = +001</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUM_SLICES" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of slices in this stripline.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_LINE_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Azimuth time first line of product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">17</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_LINE_TIME" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Azimuth time last line of product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">2</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>27</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_FIRST_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the first sample of the first line.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_FIRST_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the first sample of the first line.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">17</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_MID_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the middle sample of the first line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_MID_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the middle sample of the first line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_LAST_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the last sample of the first line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FIRST_LAST_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the last sample of the first line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_FIRST_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the first sample of the last line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_FIRST_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the first sample of the last line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_MID_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the middle sample of the last line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">13</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_MID_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the middle sample of the last line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_LAST_LAT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Geodetic Latitude of the last sample of the last line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LAST_LAST_LONG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">East geodetic longitude of the last sample of the last line. Positive values East of Greenwich, negative values west of Greenwich.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">11</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRANS_ERR_FLAG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Set to 1 if number of transmission errors exceeds threshold. Set to 0 otherwise.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">63</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FORMAT_ERR_FLAG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Set to 1 if number of format errors exceeds threshold. Set to 0 otherwise.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DATABASE_FLAG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Flag set to 1 if the processing parameters data base contents does not match the packet header contents.</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="COARSE_ERR_FLAG" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Flag indicating coarse offsets are above threshold</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">16</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ECMWF_TYPE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">0 = forecast ECMWF data was used 1 = analysis ECMWF data was used</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">11</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUM_TRANS_ERR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of transmission errors in the product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">14</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUM_FORMAT_ERR" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of format errors in the product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRANS_ERR_THRESH" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Threshold for setting TRANS_ERR_FLAG</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">17</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FORMAT_ERR_THRESH" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Threshold for setting FORMAT_ERR_FLAG</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">18</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUM_BANDS" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of bands in the product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">88</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BAND_WAVELEN" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">List of up to 15 band central wavelengths of the bands contained in this product</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">13</sdf:padding>
+              <sdf:padding type="footer">9</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>165</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BANDWIDTH" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">List of up to 15 bandwidths for the bands in the product. The order of the list must match the order of the central wavelengths entries in the previous field</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">9</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>90</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="INST_FOV" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Instantaneous Field of View</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">9</sdf:padding>
+              <sdf:padding type="footer">10</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PROC_MODE" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Processor mode of operation</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">10</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OFFSET_COMP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Offset compensation flag</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">12</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>1</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LINE_TIME_INTERVAL" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Line spacing in time</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">19</sdf:padding>
+              <sdf:padding type="footer">8</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>11</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LINE_LENGTH" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of samples per output line</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">12</sdf:padding>
+              <sdf:padding type="footer">10</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>6</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LINES_PER_TIE_PT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of lines between along track tie points</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">17</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SAMPLES_PER_TIE_PT" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Number of samples between across track tie points</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">19</sdf:padding>
+              <sdf:padding type="footer">1</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>4</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="COLUMN_SPACING" type="xs:string">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">On ground spacing between columns</xs:documentation>
+          <xs:appinfo>
+            <sdf:block>
+              <sdf:padding type="header">15</sdf:padding>
+              <sdf:padding type="footer">4</sdf:padding>
+              <sdf:encoding>ASCII</sdf:encoding>
+              <sdf:length>15</sdf:length>
+            </sdf:block>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <!-- Fields 41-57 not implemented. -->
+    </xs:sequence>
+  </xs:complexType>
+  <!-- ========================================= -->
+  <!--           ELEMENT DEFINITION              -->
+  <!-- ========================================= -->
+  <xs:element name="N1FILE">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+            ENVISAT MERIS PRODUCTS.
+         </xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element name="MPH" type="MPH_TYPE"/>
+        <xs:element name="SPH" type="SPH_TYPE"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
