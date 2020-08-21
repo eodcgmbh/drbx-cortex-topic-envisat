@@ -69,13 +69,71 @@
    <!-- ========================================= -->
 
    <owl:Class rdf:about="&envisat;productMERIS_level2_SEN3">
-      <rdfs:label xml:lang="en">Envisat MERIS Level-2 products with the SEN3 extension: ENVISAT.MER_FRS_2P</rdfs:label>
+      <rdfs:label xml:lang="en">Envisat MERIS Level-2 products with the SEN3 extension: ENVISAT.MER_FRS_2P, ENVISAT.MER_RRS_2P</rdfs:label>
       <rdfs:comment xml:lang="en">
       </rdfs:comment>
       <rdfs:subClassOf rdf:resource="&drb;item"/>
       <drb:signature rdf:parseType="Resource">
-         <drb:nameMatch>ENV_ME_2_FRG.*\.SEN3</drb:nameMatch>
+         <drb:nameMatch>ENV_ME_2_(F|R)RG.*\.SEN3</drb:nameMatch>
       </drb:signature>
+      <img:descriptor rdf:parseType="Literal">
+         <img:collection xmlns:img="&img;">
+            <img:source>.</img:source>
+            <img:raster name="red">
+               <img:width>M08_rho_TOA.nc/root/dimensions/columns</img:width>
+               <img:height>M08_rho_TOA.nc/root/dimensions/rows</img:height>
+               <img:bandNumber>1</img:bandNumber>
+               <img:data sampleModel="banded">M08_rho_TOA.nc/root/dataset/M08_rho_TOA/rows/columns</img:data>
+            </img:raster>
+            <img:raster name="green">
+               <img:width>M05_rho_TOA.nc/root/dimensions/columns</img:width>
+               <img:height>M05_rho_TOA.nc/root/dimensions/rows</img:height>
+               <img:bandNumber>1</img:bandNumber>
+               <img:data sampleModel="banded">M05_rho_TOA.nc/root/dataset/M05_rho_TOA/rows/columns</img:data>
+            </img:raster>
+             <img:raster name="blue">
+               <img:width>M02_rho_TOA.nc/root/dimensions/columns</img:width>
+               <img:height>M02_rho_TOA.nc/root/dimensions/rows</img:height>
+               <img:bandNumber>1</img:bandNumber>
+               <img:data sampleModel="banded">M02_rho_TOA.nc/root/dataset/M02_rho_TOA/rows/columns</img:data>
+            </img:raster>
+         </img:collection>
+      </img:descriptor>
+      <img:rendering rdf:parseType="Literal">
+         <img:operator name="rgb" xmlns:img="&img;">
+            <img:script language="beanshell" version="1.0">
+               // Use Olci Operator to apply sun azimuth/elevation to pixels.
+               pb = new ParameterBlock();
+               iterator=source.getChildren().iterator();
+               while (iterator.hasNext())
+                  pb.addSource(iterator.next());
+
+               pb.set(envisat.jai.operator.
+                  QuicklookMeris.extractDetectors(source), 0);
+
+               pb.set(envisat.jai.operator.
+                  QuicklookMeris.extractSunZenithAngle(source), 1);
+
+               pb.set(envisat.jai.operator.
+                  QuicklookMeris.extractSolarFlux(source), 2);
+                  
+               pb.set(new envisat.jai.operator.
+                  Common.PixelCorrection[]{
+                     envisat.jai.operator.
+                        Common.extractPixelCorrection (source, 8),
+                     envisat.jai.operator.
+                        Common.extractPixelCorrection (source, 5),
+                     envisat.jai.operator.
+                        Common.extractPixelCorrection (source, 2)},3);
+
+               pb.set(new int[]{8,5,2}, 4);
+               pb.set(new int[]{1,1,1}, 5);
+
+               img = JAI.create("QuicklookMeris",pb);
+               return img;
+            </img:script>
+         </img:operator>
+      </img:rendering>    
    </owl:Class>
 
 
@@ -110,6 +168,17 @@
       <rdfs:label xml:lang="en">Envisat AATSR Level-2 product: ENVISAT.ATS_LST_2P</rdfs:label>
       <rdfs:comment xml:lang="en">
       </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&drb;item"/>
+      <drb:signature rdf:parseType="Resource">
+         <drb:nameMatch>ATS_LST_2P....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.*</drb:nameMatch>
+      </drb:signature>
+   </owl:Class>
+   
+   <owl:Class rdf:about="&envisat;productATS_LST_2P_tgz">
+      <rdfs:label xml:lang="en">Envisat AATSR Level-2 product: ENVISAT.ATS_LST_2P tarball</rdfs:label>
+      <rdfs:comment xml:lang="en">
+      </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&envisat;productATS_LST_2P"/>
       <rdfs:subClassOf rdf:resource="&drb;tgz"/>
       <drb:signature rdf:parseType="Resource">
          <drb:nameMatch>ATS_LST_2P....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}(\.tar\.gz|\.tgz|\.TGZ)</drb:nameMatch>
@@ -120,6 +189,7 @@
       <rdfs:label xml:lang="en">Envisat AATSR Level-2 product: ENVISAT.ATS_LST_2P netCDF file</rdfs:label>
       <rdfs:comment xml:lang="en">
       </rdfs:comment>
+      <rdfs:subClassOf rdf:resource="&envisat;productATS_LST_2P"/>
       <rdfs:subClassOf rdf:resource="&nc;netCDF"/>
       <drb:signature rdf:parseType="Resource">
          <drb:nameMatch>ATS_LST_2P....[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.nc</drb:nameMatch>
