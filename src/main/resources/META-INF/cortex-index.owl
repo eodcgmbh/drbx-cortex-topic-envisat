@@ -53,7 +53,7 @@
       </rdfs:comment>
       <rdfs:subClassOf rdf:resource="&drb;item"/>
       <drb:signature rdf:parseType="Resource">
-         <drb:nameMatch>ASA_(APM_1P|IMM_1P|WSM_1P)(N|T|V|S)...[0-9]{8}_[0-9]{6}_[0-9]{8}[0-9]{1}[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.N1</drb:nameMatch>
+         <drb:nameMatch>ASA_(APM_1P|IMM_1P|WSM_1P)(N|T|V|S|P)...[0-9]{8}_[0-9]{6}_[0-9]{8}.[0-9]{3}_[0-9]{5}_[0-9]{5}_[0-9]{4}\.N1</drb:nameMatch>
       </drb:signature>
       <drb:schemaLocation>
           xsd/asar_image.xsd
